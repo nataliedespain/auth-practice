@@ -1,0 +1,7 @@
+<button *ngIf="!(auth.user | async)" (click)="loginWithGoogle()">Login</button>
+
+<div *ngIf="auth.user | async">
+    <h1>Welcome {{ (auth.user | async)?.email }}!</h1>
+    <a routerLink="/list">List</a>
+    <button (click)="logout()">Logout</button>
+</div>
